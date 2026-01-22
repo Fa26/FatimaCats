@@ -13,7 +13,7 @@ export default function Overlay() {
         <p>Made with Cats and Fun —</p>
       </TopLeft>
       <BottomLeft>
-        You can see my Github <a href="https://playful.software"> no to much interesting things</a>
+        "Let everything happen to you: beauty and terror. Just keep going. No feeling is final."
       </BottomLeft>
       <BottomRight>
         About Me
@@ -25,7 +25,7 @@ export default function Overlay() {
         <br/>
         Stuffs
         <br />
-       Github
+       <a href="https://github.com/Fa26"  target="_blank" rel="noopener noreferrer">Github</a>
         <br />
        
       </BottomRight>
