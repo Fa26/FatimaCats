@@ -1,5 +1,7 @@
+import ChatBot from '../component'
 import { Container, TopLeft, BottomLeft, BottomRight } from './styles'
 import { VelvetBanana } from './VelvetBanana'
+
 
 export default function Overlay() {
   return (
@@ -16,17 +18,11 @@ export default function Overlay() {
         "Let everything happen to you: beauty and terror. Just keep going. No feeling is final."
       </BottomLeft>
       <BottomRight>
-        About Me
-        <br/>        
+        Chat with Me!
+        <br/>   
+        <ChatBot />     
         <br />
-        Machine Learning
-        <br />
-        Web + Three.js
-        <br/>
-        Stuffs
-        <br />
-       <a href="https://github.com/Fa26"  target="_blank" rel="noopener noreferrer">Github</a>
-        <br />
+     
        
       </BottomRight>
     

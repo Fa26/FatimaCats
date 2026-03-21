@@ -7,6 +7,7 @@ import { lazy } from 'react'
 //import Bananas from './Bananas'
 import Overlay from './layout/Overlay'
 import { FadeIn, LeftMiddle } from './layout/styles'
+import ChatBot from './component'
 
  const Bananas = lazy(() => import('./Bananas'))
 
@@ -16,6 +17,7 @@ function App() {
     <>
      <Suspense fallback={null}>
         <Bananas speed={speed} />
+      
         <FadeIn />
       </Suspense>
   
