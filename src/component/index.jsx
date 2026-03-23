@@ -4,12 +4,11 @@ import { HfInference } from '@huggingface/inference';
 const hf = new HfInference(import.meta.env.VITE_HF_TOKEN);
 
 // Modelo para clasificar intenciones
-//const MODEL = 'facebook/bart-large-mnli';
 const MODEL = 'MoritzLaurer/deberta-v3-base-zeroshot-v1';
 
 
 const ChatBot = () =>{
-   const [messages, setMessages] = useState([]);
+const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
 
