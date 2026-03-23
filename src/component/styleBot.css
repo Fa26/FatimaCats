@@ -1,0 +1,38 @@
+.chatbot-container {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 500px;
+  /*margin: 2rem auto;*/
+  background: #f9f9f968;
+}
+.messages {
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+.message {
+  margin-bottom: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+.message.user {
+  background-color: #e1f5fe;
+  text-align: right;
+}
+.message.bot {
+  background-color: #fff;
+  border-left: 4px solid hsl(59, 65%, 78%);
+}
+.input-area {
+  display: flex;
+  gap: 0.5rem;
+}
+.input-area input {
+  flex: 1;
+  padding: 0.5rem;
+}
+.loading {
+  font-style: italic;
+  color: gray;
+}

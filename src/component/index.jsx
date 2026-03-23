@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { HfInference } from '@huggingface/inference';
+import './styleBot.css';
 
 const hf = new HfInference(import.meta.env.VITE_HF_TOKEN);
 
@@ -26,7 +27,7 @@ const [messages, setMessages] = useState([]);
   model: MODEL,
   inputs: input,
   parameters: {
-    candidate_labels: ['react_projects', 'about_me', 'other', 'react'],
+    candidate_labels: ['react_projects', 'about_me', 'other', 'react','github','git',],
   },
 });
   const topLabel = classification[0].label;
@@ -37,21 +38,24 @@ const confidence = classification[0].score;
 
       if (topLabel === 'react' && confidence > 0.3) {
         botResponse = `
-          ¡Claro que sé React! 🚀
-          Aquí tienes algunos de mis proyectos con React:
-          - **Mi Portfolio IA**: [GitHub](https://github.com/tuusuario/portfolio-ia) | [Demo](https://tudominio.com)
-          - **App de Tareas con Hooks**: [GitHub](https://github.com/tuusuario/todo-app)
-          - **Dashboard con React Router**: [GitHub](https://github.com/tuusuario/dashboard)
-          También puedes ver todo mi código en [GitHub](https://github.com/tuusuario).
+          ¡SURE! 
+          Here some of my React projects:
+          - **React App **:--- https://github.com/tuusuario/todo-app
+          Look my git here -- https://github.com/Fa26
         `;
-      } else if (topLabel === 'about_me' || confidence < 0.6) {
+      }else if (topLabel === 'git' && confidence > 0.3) { 
         botResponse = `
-          Soy Me llamo Fatima soy , desarrolladora  con  mas de 3 años de experiencia.
-          Me apasiona crear experiencias interactivas y aprender nuevas tecnologías.
-          ¿Te gustaría saber algo más específico?
+          You can find all my projects on my GitHub profile: https://github.com/Fa26`
+      }
+      
+    else if (topLabel === 'about_me' || confidence < 0.6) {
+        botResponse = `
+          Hi! my name is Fatima! I am a developer with over 3 years of experience.
+          I am passionate about creating interactive experiences and learning new technologies.
+          Would you like to know more specific information?
         `;
       } else {
-        botResponse = 'Lo siento, no entendí bien tu pregunta. Puedes preguntarme sobre mis habilidades en React o sobre mis proyectos.';
+        botResponse = 'Sorry, I didn\'t understand your question. You can ask me about my React skills or my projects.';
       }
 
       const botMsg = { role: 'bot', content: botResponse };
@@ -67,15 +71,15 @@ const confidence = classification[0].score;
 
 
   return (
-    <div className="chatbot-container">
+    <div class="text-2xl" className="chatbot-container">
       <div className="messages">
         {messages.map((msg, idx) => (
           <div key={idx} className={`message ${msg.role}`}>
-            <strong>{msg.role === 'user' ? 'Tú:' : 'Bot:'}</strong>
+            <strong>{msg.role === 'user' ? 'You:' : 'Bot:'}</strong>
             <div dangerouslySetInnerHTML={{ __html: msg.content.replace(/\n/g, '<br/>') }} />
           </div>
         ))}
-        {loading && <div className="loading">Escribiendo...</div>}
+        {loading && <div className="loading">Writting...</div>}
       </div>
       <div className="input-area">
         <input
@@ -83,10 +87,10 @@ const confidence = classification[0].score;
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-          placeholder="Pregúntame sobre React o mis proyectos..."
+          placeholder=" Ask something... about me or my projects"
         />
         <button onClick={sendMessage} disabled={loading}>
-          Enviar
+        Send
         </button>
       </div>
     </div>

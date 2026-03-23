@@ -21,11 +21,8 @@ export default function Overlay() {
         Chat with Me!
         <br/>   
         <ChatBot />     
-        <br />
-     
-       
+        <br />  
       </BottomRight>
-    
       <VelvetBanana />
     </Container>
   )
