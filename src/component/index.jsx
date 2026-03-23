@@ -46,8 +46,7 @@ const confidence = classification[0].score;
         `;
       } else if (topLabel === 'about_me' || confidence < 0.6) {
         botResponse = `
-          Soy **Tu Nombre**, desarrollador frontend con 3 años de experiencia.
-          Me especializo en React, TypeScript y Tailwind CSS.
+          Soy Me llamo Fatima soy , desarrolladora  con  mas de 3 años de experiencia.
           Me apasiona crear experiencias interactivas y aprender nuevas tecnologías.
           ¿Te gustaría saber algo más específico?
         `;
