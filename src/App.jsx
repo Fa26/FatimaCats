@@ -8,6 +8,7 @@ import { lazy } from 'react'
 import Overlay from './layout/Overlay'
 import { FadeIn, LeftMiddle } from './layout/styles'
 import ChatBot from './component'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
  const Bananas = lazy(() => import('./Bananas'))
 
